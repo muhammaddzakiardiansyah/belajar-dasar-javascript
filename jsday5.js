@@ -20,8 +20,21 @@ const names = ['abim', 'mia', 'dzaki', 'keissssssssiya']
 
 const newNames = names.map( (nama) => `${nama}😊`)
 
-const rename = (newNama, names) => {
+//const rename = (newNama, names) => {
     return {...names, }
-}
+//}
 
-console.log(names, newNames)
+//console.log(names, newNames)
+
+
+
+// const rename = (newName, namaku) => {
+//     return { ...namaku, lastName: newName }
+// }
+
+// console.log(rename('ardiansyah', namaku))
+
+const namaku = {
+    firstName: 'dzaki',
+    lastName: 'aaaardiansyah'
+}
