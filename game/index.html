@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game Virus slayer</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="container">
+            <!-- popup box introduce game -->
+            <div class="popupIntro">
+                <h2>Introduce Game Virus Slayer</h2>
+                <ol>
+                    <li>Welcome to my game</li>
+                    <li>You can use D,F,J,K for destroy virus</li>
+                    <li>if you not destroy 10 virus, you loser</li>
+                    <li>Input your name for username game</li>
+                    <li>Stay enjoy your game!</li>
+                </ol>
+                    <input type="text" placeholder="Input username" autofocus
+                        id="username" name="username">
+                    <button type="submit" onclick="hide()">Play</button>
+            </div>
+            <!-- end popup box introduce game -->
+
+            <!-- start game -->
+            <div class="startGame">
+                <div class="boxTools">
+                    <table>
+                        <tr>
+                            <td>Timer</td>
+                            <td>:</td>
+                            <td id="timer">00:00</td>
+                        </tr>
+                        <tr>
+                            <td>Score</td>
+                            <td>:</td>
+                            <td id="score">0</td>
+                        </tr>
+                        <tr>
+                            <td>Fail</td>
+                            <td>:</td>
+                            <td id="fail">0</td>
+                        </tr>
+                        <tr>
+                            <td>Player</td>
+                            <td>:</td>
+                            <td id="player">name</td>
+                        </tr>
+                    </table>
+                    <div class="tools">
+                        <h2>Virus Slayer</h2>
+                        <div class="restart"><a href="#" onclick="restart()">Restart</a></div>
+                        <div class="quit"><a href="#" onclick="quit()">Quit</a></div>
+                    </div>
+                </div>
+                <div class="blok">
+                    <div class="blok-1">
+                        <img src="./virus2.png" alt="virus" id="virus">
+                        <div class="danger-1"></div>
+                        <div class="D">D</div>
+                    </div>
+                    <div class="blok-2">
+                        <div class="danger-2"></div>
+                        <div class="F">F</div>
+                    </div>
+                    <div class="blok-3">
+                        <div class="J">J</div>
+                        <div class="danger-3"></div>
+                    </div>
+                    <div class="blok-4">
+                        <div class="K">K</div>
+                        <div class="danger-4"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- end start game -->
+        </div>
+
+
+
+
+
+
+
+
+
+        <script src="./script.js"></script>
+    </body>
+</html>
