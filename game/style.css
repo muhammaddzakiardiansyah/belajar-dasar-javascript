@@ -12,6 +12,7 @@
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
     margin: 8% auto;
+    overflow: hidden;
 }
 
 
@@ -23,7 +24,6 @@
     background-color: #000;
     border-radius: 10px;
     margin: 15% auto;
-    display: none;
 }
 
 .popupIntro h2 {
@@ -40,6 +40,7 @@
     margin-left: 38px;
     margin-top: 25px;
     padding: 4px 50px;
+    z-index: 10;
 }
 
 .popupIntro button {
@@ -57,7 +58,9 @@
 
 /* style start game */
 
-.startGame {}
+.startGame {
+    display: none;
+}
 
 .boxTools .tools {
     width: 300px;
@@ -117,7 +120,7 @@
     width: 70px;
     background-repeat: no-repeat;
     position: absolute;
-    top: 0 ;
+    margin-top: 0;
 }
 
 .blok .blok-1 .danger-1 {
@@ -147,6 +150,13 @@
     border-right-color: rgb(34, 31, 31);
 }
 
+.blok .blok-2 img {
+    width: 70px;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-top: 0;
+}
+
 .blok .blok-2 .danger-2 {
     width: 75;
     height: 150px;
@@ -173,6 +183,13 @@
     border-right-color: rgb(34, 31, 31);
 }
 
+.blok .blok-3 img {
+    width: 70px;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-top: 0;
+}
+
 .blok .blok-3 .danger-3 {
     width: 75;
     height: 150px;
@@ -197,6 +214,12 @@
     border: 3px solid #ddd;
     border-top-color: rgb(34, 31, 31);
     border-right-color: rgb(34, 31, 31);
+}
+
+.blok .blok-4 img {
+    width: 70px;
+    background-repeat: no-repeat;
+    position: absolute;
 }
 
 .blok .blok-4 .danger-4 {

@@ -21,7 +21,7 @@
                 </ol>
                     <input type="text" placeholder="Input username" autofocus
                         id="username" name="username">
-                    <button type="submit" onclick="hide()">Play</button>
+                    <button type="submit" onclick="hide(), createUser()">Play</button>
             </div>
             <!-- end popup box introduce game -->
 
@@ -47,7 +47,7 @@
                         <tr>
                             <td>Player</td>
                             <td>:</td>
-                            <td id="player">name</td>
+                            <td id="player" class="player">name</td>
                         </tr>
                     </table>
                     <div class="tools">
@@ -58,20 +58,20 @@
                 </div>
                 <div class="blok">
                     <div class="blok-1">
-                        <img src="./virus2.png" alt="virus" id="virus">
                         <div class="danger-1"></div>
-                        <div class="D">D</div>
+                        <div class="D">K</div>
                     </div>
                     <div class="blok-2">
                         <div class="danger-2"></div>
-                        <div class="F">F</div>
+                        <div class="F">J</div>
                     </div>
                     <div class="blok-3">
-                        <div class="J">J</div>
+                        <div class="J">F</div>
                         <div class="danger-3"></div>
                     </div>
                     <div class="blok-4">
-                        <div class="K">K</div>
+                        <img src="./virus2.png" alt="virus" id="virus" style="margin-top: -70px;">
+                        <div class="K">D</div>
                         <div class="danger-4"></div>
                     </div>
                 </div>
