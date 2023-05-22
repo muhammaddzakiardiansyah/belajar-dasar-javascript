@@ -90,14 +90,13 @@ function setVirusMoving() {
         virus.style.marginLeft = getRandomItem(number) + 'px';
         virus.style.marginTop = '-70px';
         //document.getElementById('fail').innerText = (parseInt(document.getElementById('fail').innerText)) + 1;
-        if((document.getElementById('fail').innerText = (parseInt(document.getElementById('fail').innerText)) + 1) > 10) {
-            alert(`Game over!! fail : ${document.getElementById('fail').innerText} score : ${document.getElementById('score').innerText} timer : ${document.getElementById('timer').innerText}`)
-            document.querySelector('.container').style.display = 'none';
+        if((document.getElementById('fail').innerText = (parseInt(document.getElementById('fail').innerText)) + 1) >= 10) {
+            gameOver();
             document.getElementById('fail').innerText = '0';
         }
     }
         setVirusMoving();
-    }, 2);
+    }, 0.1);
 }
 
 
@@ -116,4 +115,50 @@ window.addEventListener('keydown', (e) => {
         }
     }
 })
+
+function gameOver() {
+
+    const player = document.querySelector('.player');
+
+    const alertGameOver = document.createElement('div');
+    alertGameOver.style.width = '300px';
+    alertGameOver.style.height = '200px';
+    alertGameOver.style.backgroundColor = '#000';
+    alertGameOver.style.position = 'absolute';
+    alertGameOver.style.top = '170px';
+    alertGameOver.style.left = '34%';
+    alertGameOver.style.borderRadius = '10px';
+
+    const center = document.querySelector('center');
+    center.appendChild(alertGameOver);
+
+    const createH2 = document.createElement('h2');
+    createH2.style.textAlign = 'center';
+    createH2.style.marginTop = '10px';
+    createH2.innerText = 'Game Over';
+    createH2.style.color = 'white';
+
+    alertGameOver.appendChild(createH2);
+
+    const createScore = document.createElement('p');
+    createScore.style.textAlign = 'center';
+    createScore.style.marginTop = '20px';
+    createScore.style.fontSize = '1.5em'
+    createScore.innerText = `Time : ${document.getElementById('timer').innerText}
+                            Score : ${document.getElementById('score').innerText}
+                            Player : ${player.innerText = usernameGame[0]}`;
+    createScore.style.color = 'white';
+
+    alertGameOver.appendChild(createScore);
+
+    const createButton = document.createElement('button');
+    createButton.style.padding = '5px 15px';
+    createButton.style.backgroundColor = 'red';
+    createButton.style.color = 'white';
+    createButton.style.fontFamily = 'Arial';
+    createButton.style.marginTop = '20px';
+    createButton.style.border = '0';
+    createButton.innerText = 'Restart';
+    alertGameOver.appendChild(createButton);
+}
 
