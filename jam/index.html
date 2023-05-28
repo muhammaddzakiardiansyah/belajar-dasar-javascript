@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jam Digital</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+        }
+
+        .container > div {
+            display: inline-block;
+            font-size: 5em;
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jam"></div>
+        <div class="menit"></div>
+        <div class="detik"></div>
+    </div>
+
+    <script>
+
+        window.onload = setTimeout('date()', 1000);
+
+        function date() {
+            let date = new Date();
+            setTimeout('date()', 1000);
+            document.querySelector('.jam').innerHTML = date.getHours();
+            document.querySelector('.menit').innerHTML = date.getMinutes();
+            document.querySelector('.detik').innerHTML = date.getSeconds();
+        }
+
+    </script>
+</body>
+</html>
