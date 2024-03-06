@@ -30,7 +30,7 @@ let second = 0;
 
 function setTimer() {
     const timer = document.getElementById('timer');
-    setInterval(() => {
+    interval = setInterval(() => {
         second++
         if(second === 60) {
             second = 0;
@@ -65,6 +65,7 @@ function showUser() {
 
 function createUser() {
     const username = document.querySelector('input[name=username]');
+    console.log(username.value, 'ed');
     usernameGame.push(username.value);
     showUser()
 }
@@ -91,8 +92,9 @@ function setVirusMoving() {
         virus.style.marginTop = '-70px';
         //document.getElementById('fail').innerText = (parseInt(document.getElementById('fail').innerText)) + 1;
         if((document.getElementById('fail').innerText = (parseInt(document.getElementById('fail').innerText)) + 1) >= 10) {
-            gameOver();
             document.getElementById('fail').innerText = '0';
+            clearInterval(interval);
+            return gameOver();
         }
     }
         setVirusMoving();
@@ -104,7 +106,42 @@ function setVirusMoving() {
 
 // function keydown
 const blok4 = document.querySelector('.blok-4');
-console.log(blok4)
+window.addEventListener('keydown', (e) => {
+    if(e.key == 'd') {
+        if((parseInt(virus.style.marginTop.replace('px', '')) > 300)) {
+            const number = [3, 85, 165, 240];
+            virus.style.marginTop = '-70px';
+            virus.style.marginLeft = getRandomItem(number) + 'px';
+            document.getElementById('score').innerText = (parseInt(document.getElementById('score').innerText)) + 1;
+        }
+    }
+})
+
+const blok3 = document.querySelector('.blok-3');
+window.addEventListener('keydown', (e) => {
+    if(e.key == 'f') {
+        if((parseInt(virus.style.marginTop.replace('px', '')) > 300)) {
+            const number = [3, 85, 165, 240];
+            virus.style.marginTop = '-70px';
+            virus.style.marginLeft = getRandomItem(number) + 'px';
+            document.getElementById('score').innerText = (parseInt(document.getElementById('score').innerText)) + 1;
+        }
+    }
+})
+
+const blok2 = document.querySelector('.blok-2');
+window.addEventListener('keydown', (e) => {
+    if(e.key == 'j') {
+        if((parseInt(virus.style.marginTop.replace('px', '')) > 300)) {
+            const number = [3, 85, 165, 240];
+            virus.style.marginTop = '-70px';
+            virus.style.marginLeft = getRandomItem(number) + 'px';
+            document.getElementById('score').innerText = (parseInt(document.getElementById('score').innerText)) + 1;
+        }
+    }
+})
+
+const blok1 = document.querySelector('.blok-1');
 window.addEventListener('keydown', (e) => {
     if(e.key == 'k') {
         if((parseInt(virus.style.marginTop.replace('px', '')) > 300)) {
@@ -159,6 +196,14 @@ function gameOver() {
     createButton.style.marginTop = '20px';
     createButton.style.border = '0';
     createButton.innerText = 'Restart';
+    createButton.style.cursor = 'pointer';
+    createButton.onclick = () => {
+        restart();
+    }
     alertGameOver.appendChild(createButton);
 }
 
+function restart() {
+    location.reload();
+}
+console.log(document.getElementById('score').innerText);
